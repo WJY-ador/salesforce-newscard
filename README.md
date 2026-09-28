@@ -195,7 +195,7 @@ v3·v4·v5는 이벤트 레인에서 2026-09-18 하루 동안 DAY 1 세트를 �
 
 - 평일 릴리스 카드는 변화가 있는 날에 발행하고, 스레드에 목록 화면과 조치 화면 두 장의 빨간 테두리 캡처를 붙입니다.
 - org에 아직 안 온 예고 항목은 원문 문단 캡처와 조치 화면의 현재 모습을 붙이고, 도착한 날 실제 화면을 같은 스레드에 덧붙입니다.
-- Dreamforce '26 세 날 세트를 v5 판형으로 Instagram에 게시했습니다: [DAY 1 — 10장](https://www.instagram.com/p/DdbRyjrE7CS/) · [DAY 2 — 6장](https://www.instagram.com/p/DdbVpFtE_Dj/) · [DAY 3 — 10장](https://www.instagram.com/p/DdbV4H3Eyf3/)
+- Dreamforce '26 세 날 세트를 v5 판형으로 Instagram에 게시했습니다: [DAY 1 — 10장](https://www.instagram.com/p/DdbaRERkz_B/) · [DAY 2 — 6장](https://www.instagram.com/p/DdbaZHHk_QI/) · [DAY 3 — 10장](https://www.instagram.com/p/Ddbau8Tk1ee/)
 
 <details><summary>DAY 3 카드 보기</summary>
 
