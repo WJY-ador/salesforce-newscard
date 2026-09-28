@@ -1,0 +1,50 @@
+.editorial-infographic-dynamic {
+  position: relative;
+  width: 1024px;
+  height: 1536px;
+  overflow: hidden;
+  color: #16232e;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+.editorial-infographic-dynamic *, .editorial-infographic-dynamic *::before, .editorial-infographic-dynamic *::after { box-sizing: border-box; }
+.dynamic-skin { position: absolute; inset: 0; width: 1024px; height: 1536px; display: block; object-fit: cover; }
+.dynamic-header { position: absolute; top: 52px; left: 72px; width: 880px; text-align: center; }
+.dynamic-header > span { color: #205ca7; font-size: 20px; font-weight: 900; letter-spacing: .08em; }
+.dynamic-header h1 { margin: 12px 0 8px; color: #111f2c; font-size: 47px; font-weight: 950; line-height: 1.12; letter-spacing: -.06em; }
+.dynamic-header p { margin: 0 auto; max-width: 780px; color: #43515d; font-size: 22px; font-weight: 650; line-height: 1.35; }
+.dynamic-grid { position: absolute; top: 305px; left: 54px; width: 916px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(230px, max-content); gap: 18px; }
+.dynamic-section { position: relative; min-width: 0; min-height: 230px; padding: 23px 26px 20px; overflow: hidden; border: 3px solid #253544; border-radius: 24px; background: rgba(255, 253, 248, .97); box-shadow: 0 5px 0 rgba(37, 53, 68, .12); }
+.dynamic-section.full { grid-column: 1 / -1; min-height: 170px; }
+.dynamic-section header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.section-mark { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; flex: 0 0 38px; border-radius: 50%; color: #fff; font-size: 20px; font-weight: 900; }
+.dynamic-section h2 { margin: 0; color: #1a2a36; font-size: 25px; font-weight: 950; line-height: 1.1; letter-spacing: -.045em; }
+.tone-blue { border-color: #2867b5; } .tone-blue .section-mark { background: #2867b5; } .tone-blue h2 { color: #1c5aa4; }
+.tone-green { border-color: #337943; } .tone-green .section-mark { background: #337943; } .tone-green h2 { color: #2c703e; }
+.tone-purple { border-color: #7755ae; } .tone-purple .section-mark { background: #7755ae; } .tone-purple h2 { color: #634596; }
+.tone-orange { border-color: #e56c25; } .tone-orange .section-mark { background: #e56c25; } .tone-orange h2 { color: #d55d18; }
+.tone-gold { border-color: #c18a1a; } .tone-gold .section-mark { background: #c18a1a; } .tone-gold h2 { color: #a66f08; }
+.tone-note { border-color: #2b607d; background: rgba(244, 249, 250, .98); } .tone-note .section-mark { background: #2b607d; } .tone-note h2 { color: #255b78; }
+.dynamic-section ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.dynamic-section li { display: flex; align-items: flex-start; gap: 10px; color: #263540; font-size: 17px; font-weight: 750; line-height: 1.25; }
+.bullet { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; color: #fff; background: #4d7893; font-size: 15px; font-weight: 900; }
+.tone-purple .bullet { background: #8060b4; } .tone-orange .bullet { background: #e56c25; } .tone-gold .bullet { background: #b77b0d; }
+.compare-rows { display: grid; gap: 13px; }
+.compare-row { display: grid; grid-template-columns: 120px 1fr; align-items: center; min-height: 57px; border-radius: 14px; overflow: hidden; background: #edf3fa; }
+.compare-row b { align-self: stretch; display: flex; align-items: center; padding: 0 13px; color: #fff; background: #2867b5; font-size: 17px; font-weight: 900; }
+.compare-row span { padding: 0 14px; color: #273844; font-size: 18px; font-weight: 800; line-height: 1.25; }
+.compare-row:nth-child(2) { background: #eef6ec; } .compare-row:nth-child(2) b { background: #337943; }
+.compare-row:nth-child(3) { background: #f2eef8; } .compare-row:nth-child(3) b { background: #7755ae; }
+.compare-row:nth-child(4) { background: #fbf1e7; } .compare-row:nth-child(4) b { background: #e56c25; }
+.flow-steps { display: flex; align-items: stretch; justify-content: center; gap: 7px; margin-top: 30px; }
+.flow-step { display: flex; flex: 1; min-width: 0; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 102px; padding: 10px 5px; border: 2px solid #337943; border-radius: 16px; background: #f4f9ef; text-align: center; }
+.flow-step b { display: inline-flex; align-items: center; justify-content: center; width: 27px; height: 27px; border-radius: 50%; color: #fff; background: #337943; font-size: 15px; }
+.flow-step span { color: #285438; font-size: 16px; font-weight: 900; line-height: 1.15; }
+.flow-steps > i { display: flex; align-items: center; color: #337943; font-size: 25px; font-style: normal; font-weight: 900; }
+.note-body { max-width: 385px; margin: 10px 0 8px 50px; color: #274459; font-size: 20px; font-weight: 850; line-height: 1.35; }
+.source { display: block; margin-left: 50px; color: #647b89; font-size: 15px; font-weight: 700; }
+/* panels 모드 — GPT 배경이 패널 상자를 이미 그렸다. 코드는 상자를 다시 그리지 않고
+   같은 그리드 존에 텍스트만 얹는다. border는 투명으로 남겨 박스 치수를 유지한다. */
+.editorial-infographic-dynamic.panels-mode .dynamic-section { border-color: transparent; background: transparent; box-shadow: none; }
+/* full 모드 — GPT가 텍스트까지 그린 완성 카드를 그대로 흘려보낸다 */
+.editorial-infographic-full { width: 1024px; height: 1536px; overflow: hidden; }
+.editorial-infographic-full .full-card { display: block; width: 1024px; height: 1536px; object-fit: cover; }

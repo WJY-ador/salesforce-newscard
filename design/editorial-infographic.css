@@ -1,0 +1,82 @@
+.editorial-infographic {
+  position: relative;
+  width: 1024px;
+  height: 1536px;
+  overflow: hidden;
+  color: #13202c;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  box-sizing: border-box;
+}
+
+.editorial-infographic *, .editorial-infographic *::before, .editorial-infographic *::after { box-sizing: border-box; }
+.infographic-bg { position: absolute; inset: 0; width: 1024px; height: 1536px; display: block; }
+
+.headline-area {
+  position: absolute;
+  top: 72px;
+  left: 104px;
+  width: 820px;
+  height: 170px;
+  text-align: center;
+}
+.headline-area .eyebrow {
+  display: block;
+  color: #1f5da9;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  margin-bottom: 9px;
+}
+.headline-area h1 {
+  margin: 0;
+  color: #101c28;
+  font-size: 47px;
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -.055em;
+}
+.headline-area p {
+  margin: 10px auto 0;
+  color: #3d4a55;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.panel-grid { position: absolute; inset: 0; }
+.info-panel { position: absolute; width: 476px; height: 500px; padding: 26px 28px; }
+.panel-1 { left: 24px; top: 280px; }
+.panel-2 { left: 514px; top: 280px; width: 484px; }
+.panel-3 { left: 24px; top: 802px; }
+.panel-4 { left: 514px; top: 802px; width: 484px; }
+.info-panel header { display: flex; align-items: center; height: 72px; margin-left: 75px; }
+.panel-icon { display: none; }
+.info-panel h2 { margin: 0; font-size: 27px; font-weight: 900; letter-spacing: -.04em; }
+.tone-blue h2 { color: #1954a0; }
+.tone-green h2 { color: #26733b; }
+.tone-purple h2 { color: #5c4299; }
+.tone-orange h2 { color: #d95c14; }
+
+.info-panel ul { position: absolute; left: 48px; top: 152px; width: 390px; margin: 0; padding: 0; list-style: none; }
+.info-panel li { display: flex; align-items: flex-start; gap: 12px; min-height: 82px; padding: 4px 0; color: #1a2731; font-size: 21px; font-weight: 700; line-height: 1.35; }
+.info-panel .check { flex: 0 0 28px; width: 28px; height: 28px; border-radius: 50%; color: white; font-size: 20px; line-height: 28px; text-align: center; }
+.tone-blue .check { background: #205eb4; }
+.tone-orange .check { background: #f06b22; }
+.panel-1 ul, .panel-4 ul { left: 78px; }
+.panel-1 .check, .panel-4 .check { display: none; }
+.tone-purple li { min-height: 78px; padding: 15px 14px 12px 64px; border: 2px solid #7b5dc0; border-radius: 14px; font-size: 19px; }
+.tone-purple .check { display: none; }
+.tone-purple ul { left: 20px; top: 112px; width: 430px; }
+.tone-purple li + li { margin-top: 8px; }
+
+.flow { position: absolute; top: 292px; left: 26px; display: flex; align-items: center; gap: 10px; width: 440px; }
+.flow-step { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 128px; height: 90px; border: 0; border-radius: 14px; background: transparent; }
+.flow-step b { display: none; }
+.flow-step em { color: #24412b; font-size: 16px; font-style: normal; font-weight: 900; letter-spacing: -.04em; white-space: nowrap; }
+.arrow { display: none; }
+.panel-2 .takeaway { position: absolute; left: 30px; bottom: 44px; width: 420px; color: #31563a; font-size: 18px; font-weight: 800; }
+
+.takeaway { position: absolute; left: 220px; top: 1428px; width: 750px; height: 80px; padding: 12px 20px; }
+.takeaway-label { display: inline; color: #a55c0a; font-size: 17px; font-weight: 900; margin-right: 12px; }
+.takeaway strong { display: inline; color: #27323b; font-size: 24px; font-weight: 900; letter-spacing: -.045em; }
+.takeaway small { display: block; margin-top: 8px; color: #69757d; font-size: 13px; font-weight: 700; }

@@ -1,0 +1,35 @@
+.gpt-directed-card {
+  width: 1120px;
+  height: 1400px;
+  position: relative;
+  overflow: hidden;
+  color: #F7FBFF;
+  background: #020B26;
+  font-family: var(--sans);
+}
+.gpt-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gpt-panel {
+  position: absolute;
+  left: 42px;
+  width: 508px;
+  border: 1px solid rgba(115, 202, 255, .56);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(11, 45, 105, .70), rgba(2, 13, 44, .80));
+  box-shadow: inset 0 1px rgba(190, 235, 255, .18), 0 16px 36px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(8px);
+}
+.gpt-hero { top: 50px; height: 618px; padding: 42px 38px; }
+.gpt-label, .gpt-kicker { display:block; color: #78D2FF; font: 700 16px/1.2 var(--mono); letter-spacing: .12em; }
+.gpt-hero h1 { margin: 30px 0 24px; font-size: 58px; line-height: 1.08; letter-spacing: -.055em; word-break: keep-all; }
+.gpt-hero p { margin:0; color: #C8DEEE; font-size: 25px; line-height: 1.52; word-break: keep-all; }
+.gpt-change { top: 694px; height: 296px; padding: 28px 34px; }
+.gpt-change .gpt-kicker, .gpt-action .gpt-kicker { color: #8EDAFF; margin-bottom: 19px; }
+.gpt-change > div { display:flex; flex-direction:column; gap:7px; }
+.gpt-change b { color:#FF916E; font:700 14px/1.2 var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+.gpt-change span { font-size: 23px; line-height:1.32; font-weight:700; word-break:keep-all; }
+.gpt-change i { display:block; color:#6BCBFF; font:400 31px/1 var(--sans); margin: 8px 0; }
+.gpt-action { top: 1015px; height: 292px; padding: 27px 34px; }
+.gpt-action ol { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:15px; }
+.gpt-action li { display:flex; align-items:center; gap:13px; font-size:21px; line-height:1.28; font-weight:650; word-break:keep-all; }
+.gpt-action li b { flex:none; display:grid; place-items:center; width:28px; height:28px; border-radius:50%; color:#03112B; background:#79D6FF; font-size:15px; }
+.gpt-action small { position:absolute; left:34px; bottom:22px; color:#8EADC8; font:13px/1.2 var(--mono); }

@@ -1,0 +1,8 @@
+{
+  "name": "newscard",
+  "private": true,
+  "description": "Salesforce 뉴스카드 파이프라인 — 실측 캡처 도구만 puppeteer-core(시스템 Chrome 구동, 브라우저 다운로드 없음)를 쓴다. 나머지는 Node 내장.",
+  "devDependencies": {
+    "puppeteer-core": "^23.0.0"
+  }
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1448 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pipeline-title pipeline-desc">
+      <title id="pipeline-title">NewsCard 파이프라인</title>
+      <desc id="pipeline-desc">소스 수집 후보로 사람이 카드 브리프를 쓰면 코드가 브리프를 검증하고 이미지 프롬프트를 조립하며, 외부 이미지 모델이 만든 PNG를 코드가 4:5 판형에 맞추고 실물 로고를 합성한 뒤, 사람이 교정과 판형 실물 확인을 거친 카드만 발송 이력과 대조해 같은 PNG 하나로 Slack과 Instagram에 보내는 흐름이다.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600&amp;family=IBM+Plex+Sans+KR:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap');</style>
+        <marker id="nc-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6B7075"/></marker>
+        <marker id="nc-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C63D2F"/></marker>
+        <marker id="nc-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3D5A66"/></marker>
+      </defs>
+      <rect width="100%" height="100%" fill="#FAFAF7"/>
+      <rect x="40" y="40" width="1368" height="144" fill="rgba(28,30,33,0.025)"/>
+      <text x="56" y="116" fill="#8E9398" font-size="12" font-weight="500" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">세션 · 사람 검토</text>
+      <rect x="40" y="184" width="1368" height="144" fill="rgba(28,30,33,0.0)"/>
+      <text x="56" y="260" fill="#8E9398" font-size="12" font-weight="500" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">코드 · 자동</text>
+      <rect x="40" y="328" width="1368" height="144" fill="rgba(28,30,33,0.025)"/>
+      <text x="56" y="404" fill="#8E9398" font-size="12" font-weight="500" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">외부 서비스</text>
+      <line x1="40" y1="40" x2="1408" y2="40" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <line x1="40" y1="184" x2="1408" y2="184" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <line x1="40" y1="328" x2="1408" y2="328" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <line x1="40" y1="472" x2="1408" y2="472" stroke="rgba(28,30,33,0.12)" stroke-width="0.8"/>
+      <path d="M 248,220 V 120 Q 248,112 256,112 H 372" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <rect x="256" y="160" width="80" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="260" y="172" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">대기 큐 후보</text>
+      <path d="M 448,148 V 220" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <path d="M 472,220 V 148" fill="none" stroke="#6B7075" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#nc-arrow)"/>
+      <rect x="480" y="176" width="64" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="484" y="188" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">검사 실패</text>
+      <path d="M 548,256 H 584" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <path d="M 672,292 V 364" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <rect x="680" y="320" width="60" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="684" y="332" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">프롬프트</text>
+      <path d="M 760,400 H 876 Q 884,400 884,392 V 292" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <rect x="798" y="376" width="36" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="816" y="388" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">PNG</text>
+      <path d="M 972,256 H 1008" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <path d="M 1096,220 V 148" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <rect x="1104" y="176" width="48" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="1108" y="188" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">합성본</text>
+      <path d="M 1184,112 H 1300 Q 1308,112 1308,120 V 220" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <rect x="1222" y="88" width="36" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="1240" y="100" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">통과</text>
+      <path d="M 1308,292 V 364" fill="none" stroke="#6B7075" stroke-width="1.2" marker-end="url(#nc-arrow)"/>
+      <rect x="1316" y="320" width="88" height="16" rx="2" fill="#FAFAF7"/>
+      <text x="1320" y="332" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">미발송 항목만</text>
+      <text x="984" y="100" fill="#C63D2F" font-size="14" font-weight="600" text-anchor="end" font-family="'Hahmlet', serif">판형은 실물로 검증한다</text>
+      <text x="984" y="120" fill="#6B7075" font-size="12" text-anchor="end" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">코드의 크롭 규칙보다 게시물 픽셀이 우선</text>
+      <rect x="160" y="220" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="160" y="220" width="176" height="72" rx="6" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.40)" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="176" y="240" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">①</text>
+      <text x="248" y="256" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">소스 수집</text>
+      <text x="248" y="276" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">릴리스·블로그·행사</text>
+      <rect x="372" y="76" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="372" y="76" width="176" height="72" rx="6" fill="rgba(107,112,117,0.10)" stroke="#8E9398" stroke-width="1"/>
+      <text x="388" y="96" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">②</text>
+      <text x="460" y="112" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">카드 브리프 작성</text>
+      <text x="460" y="132" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">JSON · 문장과 출처</text>
+      <rect x="372" y="220" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="372" y="220" width="176" height="72" rx="6" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="388" y="240" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">③</text>
+      <text x="460" y="256" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">브리프 검증</text>
+      <text x="460" y="276" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">필수 필드·출처 도메인</text>
+      <rect x="584" y="220" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="584" y="220" width="176" height="72" rx="6" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="600" y="240" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">④</text>
+      <text x="672" y="256" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">프롬프트 조립</text>
+      <text x="672" y="276" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">캔버스 넘침 차단</text>
+      <rect x="584" y="364" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="584" y="364" width="176" height="72" rx="6" fill="rgba(28,30,33,0.03)" stroke="rgba(28,30,33,0.30)" stroke-width="1"/>
+      <text x="600" y="384" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑤</text>
+      <text x="672" y="400" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">이미지 생성</text>
+      <text x="672" y="420" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">이미지 모델</text>
+      <rect x="796" y="220" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="796" y="220" width="176" height="72" rx="6" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="812" y="240" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑥</text>
+      <text x="884" y="256" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">판형 맞춤</text>
+      <text x="884" y="276" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">내용 경계 · 1024×1280</text>
+      <rect x="1008" y="220" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="1008" y="220" width="176" height="72" rx="6" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="1024" y="240" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑦</text>
+      <text x="1096" y="256" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">로고 합성</text>
+      <text x="1096" y="276" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">실물 SVG · 원본 보존</text>
+      <rect x="1008" y="76" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="1008" y="76" width="176" height="72" rx="6" fill="rgba(198,61,47,0.07)" stroke="#C63D2F" stroke-width="1.2"/>
+      <text x="1024" y="96" fill="#C63D2F" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑧</text>
+      <text x="1096" y="112" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">교정 · 실물 확인</text>
+      <text x="1096" y="132" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">브리프와 글자 대조</text>
+      <rect x="1220" y="220" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="1220" y="220" width="176" height="72" rx="6" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="1236" y="240" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑨</text>
+      <text x="1308" y="256" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">발송 이력 대조</text>
+      <text x="1308" y="276" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">항목::이벤트 키</text>
+      <rect x="1220" y="364" width="176" height="72" rx="6" fill="#FAFAF7"/>
+      <rect x="1220" y="364" width="176" height="72" rx="6" fill="rgba(28,30,33,0.03)" stroke="rgba(28,30,33,0.30)" stroke-width="1"/>
+      <text x="1236" y="384" fill="#1C1E21" font-size="12" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">⑩</text>
+      <text x="1308" y="400" fill="#1C1E21" font-size="16" font-weight="600" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">Slack · Instagram</text>
+      <text x="1308" y="420" fill="#6B7075" font-size="12" text-anchor="middle" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">같은 PNG 하나</text>
+      <line x1="40" y1="508" x2="1408" y2="508" stroke="rgba(28,30,33,0.10)" stroke-width="0.8"/>
+      <text x="40" y="528" fill="#6B7075" font-size="8" font-weight="500" text-anchor="start" font-family="'IBM Plex Mono', ui-monospace, monospace" letter-spacing="0.14em">LEGEND</text>
+      <rect x="120" y="516" width="20" height="16" rx="4" fill="rgba(107,112,117,0.10)" stroke="#8E9398" stroke-width="1"/>
+      <text x="148" y="528" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">사람 검토</text>
+      <rect x="284" y="516" width="20" height="16" rx="4" fill="#ffffff" stroke="#1C1E21" stroke-width="1.2"/>
+      <text x="312" y="528" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">저장소 코드</text>
+      <rect x="448" y="516" width="20" height="16" rx="4" fill="rgba(28,30,33,0.02)" stroke="rgba(28,30,33,0.40)" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="476" y="528" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">저장소 밖 코드</text>
+      <rect x="612" y="516" width="20" height="16" rx="4" fill="rgba(28,30,33,0.03)" stroke="rgba(28,30,33,0.30)" stroke-width="1"/>
+      <text x="640" y="528" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">외부 서비스</text>
+      <rect x="776" y="516" width="20" height="16" rx="4" fill="rgba(198,61,47,0.07)" stroke="#C63D2F" stroke-width="1.2"/>
+      <text x="804" y="528" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">실물 검증 지점</text>
+      <line x1="940" y1="524" x2="964" y2="524" stroke="#6B7075" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#nc-arrow)"/>
+      <text x="972" y="528" fill="#6B7075" font-size="12" text-anchor="start" font-family="'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">되돌림</text>
+    </svg>

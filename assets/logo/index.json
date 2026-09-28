@@ -1,0 +1,64 @@
+{
+  "note": "카드에 얹는 제품 로고 (2026-09-17 신설 · 2026-09-18 원색 전환). 왜 GPT 에게 그리게 하지 않나: 이미지 모델은 로고를 못 그린다. 우리 카드에서 한글 낱글자도 10건 틀렸고, 뭉개진 가짜 로고는 없느니만 못하다. 그래서 실물 SVG 를 bin/compose-logos.mjs 가 생성된 PNG 위에 얹는다. 로고 자체의 상표권은 각 사에 있고, 뉴스 카드의 지시적(nominative) 사용 범위에서만 쓴다.",
+  "color": "brand",
+  "colorNote": "brand = 브랜드 원색 (2026-09-18 사용자 지시: \"인물이나 로고등은 원래 색상으로 보여야 현실감을 더 느낄거같아\"). color/ 에 다색 원본이 있으면 그걸 그대로 쓰고, 없으면 mono/ 단색 패스를 brandHex 로 칠한다. \"accent\" 로 되돌리면 전부 카드 강조색 단색이 된다(2색 규율 유지).",
+  "sources": {
+    "color/": "위키미디어 공용 — 브랜드 원색이 SVG 안에 들어 있는 다색 원본",
+    "mono/": "simple-icons (CC0 1.0) — 단일 경로 단색. 다색 원본을 못 구한 로고용"
+  },
+  "logos": {
+    "slack": {
+      "label": "Slack",
+      "color": true,
+      "brandHex": "#4A154B"
+    },
+    "salesforce": {
+      "label": "Salesforce",
+      "color": true,
+      "brandHex": "#00A1E0",
+      "wordmark": true
+    },
+    "nvidia": {
+      "label": "NVIDIA",
+      "color": true,
+      "brandHex": "#76B900",
+      "wordmark": true
+    },
+    "siemens": {
+      "label": "Siemens",
+      "color": true,
+      "brandHex": "#009999",
+      "wordmark": true
+    },
+    "anthropic": {
+      "label": "Anthropic",
+      "color": true,
+      "brandHex": "#1F1F1E",
+      "wordmark": true
+    },
+    "tableau": {
+      "label": "Tableau",
+      "color": false,
+      "brandHex": "#E97627"
+    },
+    "mulesoft": {
+      "label": "MuleSoft",
+      "color": false,
+      "brandHex": "#00A0DF"
+    },
+    "informatica": {
+      "label": "Informatica",
+      "color": false,
+      "brandHex": "#FF4D00"
+    },
+    "dreamforce": {
+      "label": "Dreamforce",
+      "color": true,
+      "wordmark": true,
+      "brandHex": "#001e5b",
+      "source": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/documents/PDF/dreamforce2026-logo.svg (공식 DF'26 로고, 2026-09-18 취득)"
+    }
+  },
+  "unverified": "tableau·mulesoft·informatica 의 brandHex 는 다색 원본을 못 구해 단색으로 칠하는 값이다. 각 사 브랜드 키트로 대조하지 않았다 — 확정되면 갱신한다.",
+  "wordmarkNote": "wordmark: true 면 마크에 회사명이 이미 들어 있어 아래 라벨을 그리지 않는다."
+}

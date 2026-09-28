@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  NewsCard 예약 실행 — 평일 09:30 KST
+
+  설치 (직접 실행하세요)
+    ln -sfn /PATH/TO/NewsCard/integrations/launchd/io.example.newscard.plist \
+            ~/Library/LaunchAgents/io.example.newscard.plist
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/io.example.newscard.plist
+
+  상태 확인      launchctl print gui/$(id -u)/io.example.newscard | head -20
+  즉시 1회 실행   launchctl kickstart -k gui/$(id -u)/io.example.newscard
+  중지           launchctl bootout gui/$(id -u)/io.example.newscard
+  로그           tail -f /PATH/TO/NewsCard/out/launchd.log
+
+  지금은 --send 가 없다. 발송하지 않고 렌더·검사까지만 돌며 스케줄러 자체를
+  검증하는 단계다. 선별 축이 정해지면 ProgramArguments 에 --send 를 넣는다.
+
+  StartCalendarInterval 은 로컬 시간(KST)이다. UTC 변환이 필요 없다.
+  Weekday 1=월 … 5=금. 주말은 항목이 없어서 안 돈다.
+
+  MacBook이 예정 시각에 잠들어 있으면 launchd는 깨어난 직후 실행한다.
+  그 늦은 실행은 run.sh 의 신선도 게이트(--scheduled)가 걸러낸다.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>io.example.newscard</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/PATH/TO/NewsCard/bin/run.sh</string>
+    <string>--scheduled</string>
+    <string>--fetch</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/PATH/TO/NewsCard</string>
+
+  <!-- launchd 는 PATH 가 거의 비어 있다. node(/usr/local/bin)와 homebrew 를 넣는다. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Weekday</key><integer>1</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>30</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>2</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>30</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>3</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>30</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>4</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>30</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>30</integer>
+    </dict>
+  </array>
+
+  <!-- true 면 로그인할 때마다 돈다. 예약 실행만 원하므로 false. -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/PATH/TO/NewsCard/out/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/PATH/TO/NewsCard/out/launchd.log</string>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>
