@@ -13,8 +13,7 @@
  * killSignal: 'SIGKILL' 은 필수다 (2026-09-09 실측). execFileSync 의 기본 killSignal 은 SIGTERM 이고,
  * spawnSync 계열은 시그널을 보낸 뒤에도 자식이 실제로 죽을 때까지 기다린다 — Chrome 헤드리스가
  * SIGTERM 을 무시하는 상태에 빠지면 timeout: 120000 이 무효다. 실측: fetch-sent-drift 가 dump-dom
- * 한 건에서 83분 멈춰 그날 루틴이 통째로 막혔다 (content/issue-log.md
- * ISSUE-202609-EXECFILESYNC-SIGTERM-HANG). puppeteer 의 browser.close() 는 자체 타임아웃 뒤 SIGKILL 이라
+ * 한 건에서 83분 멈춰 그날 루틴이 통째로 막혔다. puppeteer 의 browser.close() 는 자체 타임아웃 뒤 SIGKILL 이라
  * 같은 함정이 없다.
  *
  * 주의 — Aura 의 #auraLoadingBox(<span>Loading</span>) 는 부트 뒤에도 DOM 에 남는다(실측 2026-09-09: 38초

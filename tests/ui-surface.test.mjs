@@ -65,7 +65,7 @@ test('scratch 트랙이 비면 전부 gated 로 보지 않는다 — 판별 근�
 test('구조 시그니처는 origin·쿼리·레코드ID·숫자를 지운다', async () => {
   const { normalizeStructural } = await import('../bin/lib/ui-surface.mjs');
   const r = normalizeStructural([
-    'https://a.my.salesforce.com/lightning/r/Account/001Ka000004xYzAAB/view?ws=%2Fhome',
+    'https://org.example.invalid/lightning/r/Account/001Ka000004xYzAAB/view?ws=%2Fhome',
     '/lightning/r/Account/001Kb000009qWwCCD/view',
     'sfdc:StandardButton.Account.New',
     'x'
