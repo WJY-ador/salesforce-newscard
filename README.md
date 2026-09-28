@@ -1,12 +1,12 @@
-# NewsCard — 릴리스 변경을 org 화면으로 보여 주는 도구
+# NewsCard — Salesforce 릴리스를 카드뉴스로, 확인할 자리는 SDO 화면 캡처로
 
 릴리스 노트·릴리스 업데이트를 자동으로 모아, 기준 org에서 그 화면을 찾아 캡처하고, 봐야 할 자리에 빨간 테두리를 쳐서 카드·Slack으로 보내는 도구입니다.
 
-| ① 릴리스 업데이트 목록에서 이번 항목 | ② 조치할 Setup 화면에서 봐야 할 자리 |
-|---|---|
-| <img src="samples/capture-list-email-domains.png" alt="Setup 릴리스 업데이트 목록에서 대상 항목 카드에 빨간 테두리"> | <img src="samples/capture-setup-email-domains.png" alt="Setup 메뉴에서 조치할 항목에 빨간 테두리"> |
+| ① 카드뉴스 | ② 릴리스 업데이트 목록에서 이번 항목 | ③ 조치할 Setup 화면에서 봐야 할 자리 |
+|---|---|---|
+| <img src="samples/card-email-domains.png" alt="릴리스 업데이트 카드뉴스"> | <img src="samples/capture-list-email-domains.png" alt="Setup 릴리스 업데이트 목록에서 대상 항목 카드에 빨간 테두리"> | <img src="samples/capture-setup-email-domains.png" alt="Setup 메뉴에서 조치할 항목에 빨간 테두리"> |
 
-*같은 릴리스 업데이트 한 건입니다. 왼쪽은 Setup ▸ 릴리스 업데이트 목록에서 그 항목에, 오른쪽은 실제로 설정을 바꿀 Setup 메뉴 자리에 빨간 테두리를 쳤습니다. 로고와 사용자 아바타가 있는 상단 헤더는 잘라 냈습니다.*
+*같은 릴리스 업데이트 한 건입니다. 카드가 소식을 요약하고, 캡처 두 장이 데모 org(SDO)에서 그 항목과 조치할 Setup 메뉴 자리를 빨간 테두리로 가리킵니다. 로고와 사용자 아바타가 있는 상단 헤더는 잘라 냈습니다.*
 
 | 항목 | 내용 |
 |---|---|
